@@ -18,7 +18,7 @@ export default function Header() {
         </SheetTrigger>
         <SheetContent side="left" className="flex flex-col pt-10">
           <nav className="grid gap-2 text-lg font-medium">
-            <Navigation size="sm" />
+            <Navigation size="mobile" />
           </nav>
         </SheetContent>
       </Sheet>

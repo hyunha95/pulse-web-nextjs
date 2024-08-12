@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Home, MessageCircleMore, SquarePlus, UserRound } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   {
@@ -30,14 +31,14 @@ const menuItems = [
 ];
 
 type Props = {
-  size: "sm" | "lg";
+  size: "mobile" | "pc";
 };
 
 export default function Navigation({ size }: Props) {
-  const [tab, setTab] = useState("홈");
+  const path = usePathname();
 
   const linkClass =
-    size === "lg"
+    size === "pc"
       ? "text-base gap-3 rounded-lg transition-all hover:text-primary"
       : "mx-[-0.65rem] gap-4 rounded-xl text-muted-foreground hover:text-foreground";
 
@@ -47,9 +48,8 @@ export default function Navigation({ size }: Props) {
         <Link
           key={item.label}
           href={item.href}
-          onClick={() => setTab(item.label)}
           className={`flex items-center px-3 py-2 ${linkClass} ${
-            tab === item.label ? "bg-muted" : ""
+            path === item.href ? "bg-muted" : ""
           }`}
         >
           <item.icon className="h-5 w-5" />
