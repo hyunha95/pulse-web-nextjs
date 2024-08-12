@@ -20,17 +20,17 @@ export default function DropdownMenu() {
       <DropdownMenuTrigger asChild>
         <Button variant="secondary" size="icon" className="rounded-full">
           <CircleUser className="h-5 w-5" />
-          <span className="sr-only">Toggle user menu</span>
+          <span className="sr-only">사용자 메뉴 전환</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuLabel>내 계정</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Settings</DropdownMenuItem>
-        <DropdownMenuItem>Support</DropdownMenuItem>
+        <DropdownMenuItem>설정</DropdownMenuItem>
+        <DropdownMenuItem>도움말</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => router.replace("/login")}>
-          Logout
+          로그아웃
         </DropdownMenuItem>
       </DropdownMenuContent>
     </ShadcnDropDownMenu>
